@@ -35,7 +35,7 @@ function test(exercise, exit = true) {
     checkAndClean(dir)(exercise);
   };
   
-  const directory = new Proxy({ 2: 'build', 3: 'build' }, {
+  const directory = new Proxy({ 2: 'build', 3: 'build', 4: 'build' }, {
     get(target, prop) {
       const dir = target[prop] || 'dist';
       if(prop === '4') return checkAndCleanHash(dir);
